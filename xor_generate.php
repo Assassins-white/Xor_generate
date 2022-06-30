@@ -60,8 +60,3 @@ while (!empty($keyword)) {
         continue;
     }
 }?>
-
-
-
-
-
