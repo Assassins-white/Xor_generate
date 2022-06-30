@@ -55,6 +55,7 @@ while (!empty($keyword)) {
     if($length === $length2 && $xor2 == $keyword){
         echo 'keyword: '.$keyword . '<hr>';
         echo "<table border=\"2\"><tr><th>Xor1</th><th>Xor2</th></tr><tr><td>$random</td><td>$xor1</td></tr></table>";
+        echo '<br/>鼠标左击三下选中内容';
         break;
     }else{
         continue;
