@@ -10,8 +10,6 @@
         <input type="text" name="keyword">
         <input type="submit">
     </form>
-    
-    
 </body>
 </html>
 
@@ -42,19 +40,24 @@ function filterNonPrintableChar($str){
     return $newStr;
 }
 
-while (!empty($keyword)) {
-    $length = mb_strlen($keyword);
-    $random = GetRandStr($length);
-    $xor1 = ("$keyword"^"$random");
-    $xor1 = filterNonPrintableChar($xor1);
-    $length2 = strlen($xor1);
-    $xor2 = ("$random"^"$xor1");
-    if($length === $length2 && $xor2 == $keyword){
-        echo 'keyword: '.$keyword . '<hr>';
-        echo "<table border=\"2\"><tr><th>Xor1</th><th>Xor2</th></tr><tr><td>$random</td><td>$xor1</td></tr></table>";
-        echo '<br/>鼠标左击三下选中内容';
-        break;
-    }else{
-        continue;
+function result(){
+    $keyword = @$_POST['keyword'];
+    while (!empty($keyword)) {
+        $length = mb_strlen($keyword);
+        $random = GetRandStr($length);
+        $xor1 = ("$keyword"^"$random");
+        $xor1 = filterNonPrintableChar($xor1);
+        $length2 = strlen($xor1);
+        $xor2 = ("$random"^"$xor1");
+        if($length === $length2 && $xor2 == $keyword){
+            echo 'keyword: '.$keyword . '<hr>';
+            echo "<table border=\"2\"><tr><th>Xor1</th><th>Xor2</th></tr><tr><td>$random</td><td>$xor1</td></tr></table>";
+            echo '<br/>鼠标左击三下选中内容';
+            break;
+        }else{
+            continue;
+        }
     }
-}?>
+}
+result();
+?>
