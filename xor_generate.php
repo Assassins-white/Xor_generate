@@ -18,7 +18,7 @@
 
 <?php
 function GetRandStr($length){
-    $str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    $str = '!@#$%^&*()_-+=|;:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     $len = strlen($str)-1;
     $randstr = '';
     for ($i=0;$i<$length;$i++) {
