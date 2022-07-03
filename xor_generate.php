@@ -42,9 +42,6 @@ function filterNonPrintableChar($str){
     return $newStr;
 }
 
-$keyword = $_POST['keyword'];
-
-
 while (!empty($keyword)) {
     $length = mb_strlen($keyword);
     $random = GetRandStr($length);
